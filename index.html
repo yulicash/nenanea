@@ -5,130 +5,178 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Solicitud de Ayuda - Fundación Hope</title>
 <style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: #f4f7fa;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 20px;
-    }
-    .container {
-        background: white;
-        padding: 30px 40px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgb(0 0 0 / 0.2);
-        max-width: 400px;
-        width: 100%;
-    }
-    h1 {
-        color: #34495e;
-        margin-bottom: 25px;
-        font-size: 24px;
-        text-align: center;
-    }
-    label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 600;
-        color: #34495e;
-    }
-    input[type="text"],
-    input[type="email"],
-    textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        border: 1.5px solid #ccc;
-        font-size: 15px;
-        transition: border-color 0.3s ease;
-    }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    textarea:focus {
-        border-color: #2980b9;
-        outline: none;
-    }
-    textarea {
-        resize: vertical;
-        min-height: 80px;
-    }
-    button {
-        width: 100%;
-        background-color: #2980b9;
-        color: white;
-        padding: 12px;
-        font-size: 16px;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    button:hover {
-        background-color: #1f5f8b;
-    }
-    #mensaje {
-        margin-top: 20px;
-        font-weight: bold;
-        color: #27ae60;
-        text-align: center;
-    }
+  body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7fa;
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+  }
+  .container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      max-width: 600px;
+      width: 100%;
+  }
+  h1 {
+      text-align: center;
+      color: #34495e;
+      margin-bottom: 30px;
+      font-size: 28px;
+  }
+  h2 {
+      font-size: 20px;
+      color: #2c3e50;
+      border-bottom: 2px solid #2980b9;
+      padding-bottom: 6px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+  }
+  label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #34495e;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  input[type="number"]:focus,
+  textarea:focus,
+  select:focus {
+      border-color: #2980b9;
+      outline: none;
+  }
+  textarea {
+      resize: vertical;
+      min-height: 100px;
+  }
+  button {
+      background-color: #2980b9;
+      color: white;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+  }
+  button:hover {
+      background-color: #1f5f8b;
+  }
+  #mensaje {
+      margin-top: 25px;
+      font-weight: 600;
+      text-align: center;
+  }
 </style>
 </head>
 <body>
 <div class="container">
-    <h1>Solicitud de Ayuda - Fundación Hope</h1>
-    <form id="formularioSolicitud" action="https://formspree.io/f/xgoqzbkg" method="POST">
-        <label for="nombre">Nombre completo:</label>
-        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
+  <h1>Solicitud de Ayuda - Fundación Hope</h1>
 
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" required placeholder="tucorreo@example.com" />
+  <form id="formularioSolicitud" action="https://formspree.io/f/xgoqzbkg" method="POST" enctype="multipart/form-data">
+    
+    <h2>Datos Personales</h2>
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
 
-        <label for="motivo">Motivo de la ayuda:</label>
-        <textarea id="motivo" name="motivo" required placeholder="Cuéntanos por qué necesitas ayuda"></textarea>
+    <label for="documento">Documento de identidad:</label>
+    <input type="text" id="documento" name="documento" placeholder="DNI, Pasaporte, etc." required />
 
-        <button type="submit">Enviar Solicitud</button>
-    </form>
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" min="0" max="120" placeholder="Tu edad" required />
+    
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" placeholder="Número de contacto" required />
+    
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" name="correo" required placeholder="tuemail@example.com" />
+    
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion" placeholder="Calle, ciudad, país" required />
+
+    <h2>Información de la Ayuda</h2>
+    <label for="tipoAyuda">Tipo de ayuda solicitada:</label>
+    <select id="tipoAyuda" name="tipoAyuda" required>
+      <option value="" disabled selected>Selecciona una opción</option>
+      <option value="Economica">Económica</option>
+      <option value="Alimentos">Alimentos</option>
+      <option value="Ropa">Ropa</option>
+      <option value="Medica">Ayuda médica</option>
+      <option value="Otra">Otra</option>
+    </select>
+    
+    <label for="cantidad">Cantidad o descripción:</label>
+    <textarea id="cantidad" name="cantidad" placeholder="Especifica la cantidad o más detalles" required></textarea>
+
+    <label for="comprobante">Adjuntar comprobante (opcional):</label>
+    <input type="file" id="comprobante" name="comprobante" accept=".jpg,.jpeg,.png,.pdf" />
+
+    <h2>Confirmación</h2>
+    <label>
+      <input type="checkbox" name="terminos" required />  
+      Acepto que la información proporcionada es verdadera y autorizo su uso para la solicitud.
+    </label>
+
+    <button type="submit">Enviar Solicitud</button>
     <p id="mensaje"></p>
+  </form>
 </div>
 
 <script>
-    const form = document.getElementById('formularioSolicitud');
-    const mensaje = document.getElementById('mensaje');
+  const form = document.getElementById('formularioSolicitud');
+  const mensaje = document.getElementById('mensaje');
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-        const formData = new FormData(form);
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-        }).then(response => {
-            if (response.ok) {
-                mensaje.textContent = "Gracias por enviar tu solicitud.";
-                mensaje.style.color = "#27ae60";
-                form.reset();
-            } else {
-                response.json().then(data => {
-                    if (Object.hasOwn(data, 'errors')) {
-                        mensaje.textContent = data["errors"].map(error => error["message"]).join(", ");
-                    } else {
-                        mensaje.textContent = "Hubo un problema al enviar la solicitud.";
-                    }
-                    mensaje.style.color = "#e74c3c";
-                })
-            }
-        }).catch(() => {
-            mensaje.textContent = "Error al enviar la solicitud. Por favor intenta de nuevo.";
-            mensaje.style.color = "#e74c3c";
+    const formData = new FormData(form);
+    
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        mensaje.textContent = "Gracias por enviar tu solicitud, te contactaremos pronto.";
+        mensaje.style.color = "#27ae60";
+        form.reset();
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            mensaje.textContent = data["errors"].map(error => error["message"]).join(", ");
+          } else {
+            mensaje.textContent = "Hubo un problema al enviar la solicitud.";
+          }
+          mensaje.style.color = "#e74c3c";
         });
+      }
+    }).catch(() => {
+      mensaje.textContent = "Error al enviar la solicitud. Por favor intenta de nuevo.";
+      mensaje.style.color = "#e74c3c";
     });
+  });
 </script>
 </body>
 </html>
